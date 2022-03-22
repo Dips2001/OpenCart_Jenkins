@@ -151,11 +151,11 @@ public class HomeTest
 	@Then("the price of all the products should convert to Pound Sterling currency")
 	public void the_price_of_all_the_products_should_convert_to_pound_sterling_currency() {
 		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-		assertEquals(driver.findElement(By.xpath(prop.getProperty("pound_icon"))).getText(),"&#xA3;");
-		assertTrue(driver.findElement(By.cssSelector(prop.getProperty("price1"))).getText().contains("&#xA3;"));
-		assertTrue(driver.findElement(By.cssSelector(prop.getProperty("price2"))).getText().contains("&#xA3;"));
-		assertTrue(driver.findElement(By.cssSelector(prop.getProperty("price3"))).getText().contains("&#xA3;"));
-		assertTrue(driver.findElement(By.cssSelector(prop.getProperty("price4"))).getText().contains("&#xA3;"));
+		assertEquals(driver.findElement(By.xpath(prop.getProperty("pound_icon"))).getText(),"\u00A3");
+		assertTrue(driver.findElement(By.cssSelector(prop.getProperty("price1"))).getText().contains("\u00A3"));
+		assertTrue(driver.findElement(By.cssSelector(prop.getProperty("price2"))).getText().contains("\u00A3"));
+		assertTrue(driver.findElement(By.cssSelector(prop.getProperty("price3"))).getText().contains("\u00A3"));
+		assertTrue(driver.findElement(By.cssSelector(prop.getProperty("price4"))).getText().contains("\u00A3"));
 	}
 
 	@When("I select US Dollar currency")
