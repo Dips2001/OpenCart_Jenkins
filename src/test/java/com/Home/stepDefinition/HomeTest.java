@@ -123,9 +123,9 @@ public class HomeTest
 
 	@Then("the currency dropdown containing Euro, Pound Sterling and US dollar should appear")
 	public void the_currency_dropdown_containing_euro_pound_sterling_and_us_dollar_should_appear() {
-		assertEquals(driver.findElement(By.name(prop.getProperty("euro"))).getText(),"€ Euro");
-		assertEquals(driver.findElement(By.name(prop.getProperty("pound"))).getText(),"£ Pound Sterling");
-		assertEquals(driver.findElement(By.name(prop.getProperty("dollar"))).getText(),"$ US Dollar");
+		assertTrue(driver.findElement(By.name(prop.getProperty("euro"))).getText().contains("Euro"));
+		assertTrue(driver.findElement(By.name(prop.getProperty("pound"))).getText().contains("Pound Sterling"));
+		assertTrue(driver.findElement(By.name(prop.getProperty("dollar"))).getText().contains("$ US Dollar"));
 	}
 			
 	@When("I select Euro currency")
