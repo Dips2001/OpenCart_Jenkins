@@ -1,0 +1,20 @@
+
+@OrderingCheckout @PersonalDetailsForm @Test
+Scenario: To validate by providing valid values for First Name, Last Name, Email, Phone Number input field in the Personal Details Form # Features/Ordering&Checkout.feature:90
+  Given OpenCart website is ready                                                                                                       # com.OrderingCheckout.stepDefinition.OrderingCheckoutTest.open_cart_website_is_ready()
+  When I launch URL in chrome browser                                                                                                   # com.OrderingCheckout.stepDefinition.OrderingCheckoutTest.i_launch_url_in_chrome_browser()
+  And I add some products to shopping cart                                                                                              # com.OrderingCheckout.stepDefinition.OrderingCheckoutTest.i_add_some_products_to_shopping_cart()
+  And I click on Checkout Button                                                                                                        # com.OrderingCheckout.stepDefinition.OrderingCheckoutTest.i_click_on_checkout_button()
+  And I click on Continue as Guest Button                                                                                               # com.OrderingCheckout.stepDefinition.OrderingCheckoutTest.i_click_on_continue_as_guest_button()
+  And I enter valid First Name                                                                                                          # com.OrderingCheckout.stepDefinition.OrderingCheckoutTest.i_enter_valid_first_name()
+  And I enter valid Last Name                                                                                                           # com.OrderingCheckout.stepDefinition.OrderingCheckoutTest.i_enter_valid_last_name()
+  And I enter valid Email                                                                                                               # com.OrderingCheckout.stepDefinition.OrderingCheckoutTest.i_enter_valid_email()
+  And I enter valid Phone Number                                                                                                        # com.OrderingCheckout.stepDefinition.OrderingCheckoutTest.i_enter_valid_phone_number()
+  And I enter valid Address1                                                                                                            # com.OrderingCheckout.stepDefinition.OrderingCheckoutTest.i_enter_valid_address1()
+  And I enter valid Address2                                                                                                            # com.OrderingCheckout.stepDefinition.OrderingCheckoutTest.i_enter_valid_address2()
+  And I enter valid City                                                                                                                # com.OrderingCheckout.stepDefinition.OrderingCheckoutTest.i_enter_valid_city()
+  And I enter valid Post Code                                                                                                           # com.OrderingCheckout.stepDefinition.OrderingCheckoutTest.i_enter_valid_post_code()
+  And I select valid Country                                                                                                            # com.OrderingCheckout.stepDefinition.OrderingCheckoutTest.i_select_valid_country()
+  And I select valid Zone                                                                                                               # com.OrderingCheckout.stepDefinition.OrderingCheckoutTest.i_select_valid_zone()
+  And I click on Continue Button in Personal Details Form                                                                               # com.OrderingCheckout.stepDefinition.OrderingCheckoutTest.i_click_on_continue_button_in_personal_details_form()
+  Then I should see Delivery Method Form                                                                                                # com.OrderingCheckout.stepDefinition.OrderingCheckoutTest.i_should_see_delivery_method_form()

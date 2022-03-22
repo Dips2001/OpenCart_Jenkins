@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="37.191">
+    <testcase classname="Ordering and Checkout Verification" name="To validate by providing valid values for First Name, Last Name, Email, Phone Number input field in the Personal Details Form" time="36.633">
+        <system-out><![CDATA[Given OpenCart website is ready.............................................passed
+When I launch URL in chrome browser.........................................passed
+And I add some products to shopping cart....................................passed
+And I click on Checkout Button..............................................passed
+And I click on Continue as Guest Button.....................................passed
+And I enter valid First Name................................................passed
+And I enter valid Last Name.................................................passed
+And I enter valid Email.....................................................passed
+And I enter valid Phone Number..............................................passed
+And I enter valid Address1..................................................passed
+And I enter valid Address2..................................................passed
+And I enter valid City......................................................passed
+And I enter valid Post Code.................................................passed
+And I select valid Country..................................................passed
+And I select valid Zone.....................................................passed
+And I click on Continue Button in Personal Details Form.....................passed
+Then I should see Delivery Method Form......................................passed
+]]></system-out>
+    </testcase>
+</testsuite>
