@@ -37,43 +37,11 @@ public class OrderingCheckoutTest {
 	File f=new File("src/test/resources/OpenCartData.xlsx");
 	FileInputStream is;
 	XSSFWorkbook w;
-	static int flag=0;
 	
 	@Before
 	public void beforeScenario() throws IOException {
-		while(flag == 0)
-		{
-			Scanner sc = new Scanner(System.in);
-			System.out.println("Please enter your preferred browser :- \n1) Google Chrome \n2) Mozilla Firefox \n3) Microsoft Edge\n");
-			int choice = sc.nextInt();
-			if(choice == 1)
-			{
-				System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\Drivers\\chromedriver.exe");
-				flag=choice;
-			}
-			else if(choice == 2)
-			{
-				System.setProperty("webdriver.gecko.driver", "src\\test\\resources\\Drivers\\geckodriver.exe");
-		        flag=choice;
-			}
-			else if(choice == 3)
-			{
-				System.setProperty("webdriver.edge.driver", "src\\test\\resources\\Drivers\\msedgedriver.exe");
-				flag=choice;
-			}
-			else
-			{
-				System.out.println("Invalid input\n");
-				flag=0;
-			}
-		}
-		if(flag == 1)
-			driver = new ChromeDriver();
-		else if(flag == 2)	
-	        driver = new FirefoxDriver();
-		else if(flag == 3)
-			driver=new EdgeDriver();
-		
+		System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\Drivers\\chromedriver.exe");
+		driver = new ChromeDriver();
 		FileInputStream fs = new FileInputStream("src/test/resources/OpenCart.properties");
 		prop = new Properties();
 		prop.load(fs);
@@ -103,7 +71,7 @@ public class OrderingCheckoutTest {
 	    Thread.sleep(2000);
 	    driver.findElement(By.xpath(prop.getProperty("button_cart"))).click();
 	    driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-	    assertEquals(driver.findElement(By.xpath(prop.getProperty("alert1"))).getText(), "Success: You have added HP LP3065 to your shopping cart!\n×");
+	    assertEquals(driver.findElement(By.xpath(prop.getProperty("alert1"))).getText(), "Success: You have added HP LP3065 to your shopping cart!\nÃ—");
 	}
 	
 	@When("I click on Checkout Button")
