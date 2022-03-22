@@ -29,8 +29,6 @@ public class HomeTest
 	public static WebDriver driver;
 	Properties prop;
 	
-	static int flag=0;
-	
 	@Before
 	public void beforeScenario() throws IOException
 	{
