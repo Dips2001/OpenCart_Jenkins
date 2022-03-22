@@ -26,44 +26,12 @@ public class BrowseCartTest {
 	
 	public static WebDriver driver;
 	Properties prop;
-	static int flag=0;
 	
 	@Before
 	public void beforeScenario() throws IOException
 	{
-		while(flag == 0)
-		{
-			Scanner sc = new Scanner(System.in);
-			System.out.println("Please enter your preferred browser :- \n1) Google Chrome \n2) Mozilla Firefox \n3) Microsoft Edge\n");
-			int choice = sc.nextInt();
-			if(choice == 1)
-			{
-				System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\Drivers\\chromedriver.exe");
-				flag=choice;
-			}
-			else if(choice == 2)
-			{
-				System.setProperty("webdriver.gecko.driver", "src\\test\\resources\\Drivers\\geckodriver.exe");
-		        flag=choice;
-			}
-			else if(choice == 3)
-			{
-				System.setProperty("webdriver.edge.driver", "src\\test\\resources\\Drivers\\msedgedriver.exe");
-				flag=choice;
-			}
-			else
-			{
-				System.out.println("Invalid input\n");
-				flag=0;
-			}
-		}
-		if(flag == 1)
-			driver = new ChromeDriver();
-		else if(flag == 2)	
-	        driver = new FirefoxDriver();
-		else if(flag == 3)
-			driver=new EdgeDriver();
-
+		System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\Drivers\\chromedriver.exe");
+		driver = new ChromeDriver();
 		FileInputStream fs = new FileInputStream("src/test/resources/OpenCart.properties");
 		prop = new Properties();
 		prop.load(fs);
@@ -226,7 +194,7 @@ public class BrowseCartTest {
 	@Then("product should be added to compare list.")
 	public void product_should_be_added_to_compare_list() {
 		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-		assertEquals(driver.findElement(By.xpath(prop.getProperty("compareList"))).getText(),"Success: You have added MacBook to your product comparison!\n×");
+		assertEquals(driver.findElement(By.xpath(prop.getProperty("compareList"))).getText(),"Success: You have added MacBook to your product comparison!\nÃ—");
 	}
 
 	@Then("shopping cart option should be visible.")
@@ -244,7 +212,7 @@ public class BrowseCartTest {
 	    driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 	    driver.findElement(By.xpath(prop.getProperty("button_cart"))).click();
 	    driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-	    assertEquals(driver.findElement(By.xpath(prop.getProperty("alert1"))).getText(), "Success: You have added HP LP3065 to your shopping cart!\n×");
+	    assertEquals(driver.findElement(By.xpath(prop.getProperty("alert1"))).getText(), "Success: You have added HP LP3065 to your shopping cart!\nÃ—");
 	}
 
 	@When("I click on shopping cart")
@@ -281,7 +249,7 @@ public class BrowseCartTest {
 
 	@Then("the warning message gets displayed in Coupon Code")
 	public void the_warning_message_gets_displayed_in_coupon_code() {
-	    assertEquals(driver.findElement(By.xpath(prop.getProperty("coupon_warning"))).getText(), "Warning: Coupon is either invalid, expired or reached its usage limit!\n×");
+	    assertEquals(driver.findElement(By.xpath(prop.getProperty("coupon_warning"))).getText(), "Warning: Coupon is either invalid, expired or reached its usage limit!\nÃ—");
 	    driver.findElement(By.xpath(prop.getProperty("use"))).click();
 	}
 	
