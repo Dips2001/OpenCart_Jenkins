@@ -254,9 +254,10 @@ public class BrowseCartTest {
 	}
 	
 	@When("I click on estimate shipping taxes")
-	public void i_click_on_estimate_shipping_taxes() {
+	public void i_click_on_estimate_shipping_taxes() throws InterruptedException {
+		Thread.sleep(2000);
 		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-		driver.findElement(By.cssSelector(prop.getProperty("estimate_shipping_taxes"))).click();
+// 		driver.findElement(By.cssSelector(prop.getProperty("estimate_shipping_taxes"))).click();
 		driver.findElement(By.cssSelector(prop.getProperty("estimate_shipping_taxes"))).click();
 	}
 
