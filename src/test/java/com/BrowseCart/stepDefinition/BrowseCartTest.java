@@ -194,7 +194,7 @@ public class BrowseCartTest {
 	@Then("product should be added to compare list.")
 	public void product_should_be_added_to_compare_list() {
 		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-		assertEquals(driver.findElement(By.xpath(prop.getProperty("compareList"))).getText(),"Success: You have added MacBook to your product comparison!\n×");
+		assertTrue(driver.findElement(By.xpath(prop.getProperty("compareList"))).getText().contains("Success: You have added MacBook to your product comparison!"));
 	}
 
 	@Then("shopping cart option should be visible.")
@@ -212,7 +212,7 @@ public class BrowseCartTest {
 	    driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 	    driver.findElement(By.xpath(prop.getProperty("button_cart"))).click();
 	    driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-	    assertEquals(driver.findElement(By.xpath(prop.getProperty("alert1"))).getText(), "Success: You have added HP LP3065 to your shopping cart!\n×");
+	    assertTrue(driver.findElement(By.xpath(prop.getProperty("alert1"))).getText().contains("Success: You have added HP LP3065 to your shopping cart!"));
 	}
 
 	@When("I click on shopping cart")
@@ -249,7 +249,7 @@ public class BrowseCartTest {
 
 	@Then("the warning message gets displayed in Coupon Code")
 	public void the_warning_message_gets_displayed_in_coupon_code() {
-	    assertEquals(driver.findElement(By.xpath(prop.getProperty("coupon_warning"))).getText(), "Warning: Coupon is either invalid, expired or reached its usage limit!\n×");
+	    assertTrue(driver.findElement(By.xpath(prop.getProperty("coupon_warning"))).getText().contains("Warning: Coupon is either invalid, expired or reached its usage limit!"));
 	    driver.findElement(By.xpath(prop.getProperty("use"))).click();
 	}
 	
