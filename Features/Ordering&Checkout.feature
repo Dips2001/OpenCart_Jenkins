@@ -86,7 +86,7 @@
     Then I should see Personal Details Form
     And I should see First Name field, Last Name field, Email field, Phone Number field and Continue Button
 
-  @PersonalDetailsForm @Test
+  @PersonalDetailsForm
   Scenario:To validate by providing valid values for First Name, Last Name, Email, Phone Number input field in the Personal Details Form
     Given OpenCart website is ready
     When I launch URL in chrome browser
