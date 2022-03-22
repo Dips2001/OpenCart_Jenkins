@@ -71,7 +71,7 @@ public class OrderingCheckoutTest {
 	    Thread.sleep(2000);
 	    driver.findElement(By.xpath(prop.getProperty("button_cart"))).click();
 	    driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-	    assertEquals(driver.findElement(By.xpath(prop.getProperty("alert1"))).getText(), "Success: You have added HP LP3065 to your shopping cart!\n×");
+	    assertTrue(driver.findElement(By.xpath(prop.getProperty("alert1"))).getText().contains("Success: You have added HP LP3065 to your shopping cart!"));
 	}
 	
 	@When("I click on Checkout Button")
