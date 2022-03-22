@@ -122,7 +122,7 @@ Feature: Browse and Cart Verification
 		Then shopping cart option should be visible.
 	
 	
-	@ShoppingCart
+	@ShoppingCart @Test
 	Scenario: To validate products are present in shopping cart, if previously added
 		Given OpenCart website is ready
 		And I launch URL in chrome browser
