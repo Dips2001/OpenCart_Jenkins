@@ -29,43 +29,11 @@ public class HomeTest
 	public static WebDriver driver;
 	Properties prop;
 	
-	static int flag=0;
-	
 	@Before
 	public void beforeScenario() throws IOException
 	{
-		while(flag == 0)
-		{
-			Scanner sc = new Scanner(System.in);
-			System.out.println("Please enter your preferred browser :- \n1) Google Chrome \n2) Mozilla Firefox \n3) Microsoft Edge\n");
-			int choice = sc.nextInt();
-			if(choice == 1)
-			{
-				System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\Drivers\\chromedriver.exe");
-				flag=choice;
-			}
-			else if(choice == 2)
-			{
-				System.setProperty("webdriver.gecko.driver", "src\\test\\resources\\Drivers\\geckodriver.exe");
-		        flag=choice;
-			}
-			else if(choice == 3)
-			{
-				System.setProperty("webdriver.edge.driver", "src\\test\\resources\\Drivers\\msedgedriver.exe");
-				flag=choice;
-			}
-			else
-			{
-				System.out.println("Invalid input\n");
-				flag=0;
-			}
-		}
-		if(flag == 1)
-			driver = new ChromeDriver();
-		else if(flag == 2)	
-	        driver = new FirefoxDriver();
-		else if(flag == 3)
-			driver=new EdgeDriver();
+		System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\Drivers\\chromedriver.exe");
+		driver = new ChromeDriver();
 		FileInputStream fs = new FileInputStream("src/test/resources/OpenCart.properties");
 		prop = new Properties();
 		prop.load(fs);
